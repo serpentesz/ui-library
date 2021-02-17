@@ -5,7 +5,8 @@ function WindowTable:CreateWindow()
 	-- Version: 3.2
 
 	-- Instances:
-
+	
+	local Tutorial = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local mainCorner = Instance.new("UICorner")
 	local SideBar = Instance.new("Frame")
