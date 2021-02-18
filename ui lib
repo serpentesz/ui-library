@@ -20,7 +20,7 @@ function WindowTable:CreateWindow()
 	--Properties:
 	
 	Tutorial.Name = "Tutorial"
-	Tutorial.Parent = game.Players.LocalPlayer:WaitForChild("CoreGui")
+	Tutorial.Parent = game:GetService("CoreGui")
 	Tutorial.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	Tutorial.ResetOnSpawn = false
 
