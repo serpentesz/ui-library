@@ -125,11 +125,6 @@ function WindowTable:CreateWindow()
 		end)
 
 
-		
-		
-		
-		
-		
 		tabCorner.CornerRadius = UDim.new(0, 3)
 		tabCorner.Name = "tabCorner"
 		tabCorner.Parent = tabButton
@@ -150,6 +145,8 @@ function WindowTable:CreateWindow()
 
 		
 	end
+	
+	return TabHandler
 end
 
 
