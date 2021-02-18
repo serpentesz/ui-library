@@ -180,9 +180,9 @@ function WindowTable:CreateWindow()
 		return ElementHandler
 	end
 	
-	local SecretAstolfo = {}
+	local Astolfo = {}
 
-	function SecretAstolfo:CreateAstolfo()
+	function Astolfo:CreateAstolfo()
 		local ImageLabel = Instance.new("ImageLabel")
 
 		ImageLabel.Parent = allPages
@@ -194,7 +194,7 @@ function WindowTable:CreateWindow()
 		ImageLabel.Image = "rbxassetid://4528820693"
 		ImageLabel.ImageTransparency = 0.500
 
-		return SecretAstolfo
+		return Astolfo
 
 	end
 
