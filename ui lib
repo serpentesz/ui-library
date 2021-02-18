@@ -15,9 +15,6 @@ function WindowTable:CreateWindow()
 	local allPages = Instance.new("Frame")
 	local mainCorner_2 = Instance.new("UICorner")
 	local pagesFolder = Instance.new("Folder")
-	local TextButton = Instance.new("TextButton")
-	local buttonCorner = Instance.new("UICorner")
-
 
 	--Properties:
 	
@@ -177,24 +174,6 @@ function WindowTable:CreateWindow()
 		end
 		
 		return ElementHandler
-	end
-	
-	local Astolfo = {}
-
-	function Astolfo:CreateAstolfo()
-		local ImageLabel = Instance.new("ImageLabel")
-
-		ImageLabel.Parent = allPages
-		ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		ImageLabel.BackgroundTransparency = 1.000
-		ImageLabel.Position = UDim2.new(-0.00242075324, 0, -0.000457137823, 0)
-		ImageLabel.Size = UDim2.new(0, 259, 0, 244)
-		ImageLabel.ZIndex = 2
-		ImageLabel.Image = "rbxassetid://4528820693"
-		ImageLabel.ImageTransparency = 0.500
-
-		return Astolfo
-
 	end
 
 	return TabHandler
