@@ -3,7 +3,8 @@ local WindowTable = {}
 function WindowTable:CreateWindow()
 	
 	-- Instances:
-
+	
+	local Tutorial = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local mainCorner = Instance.new("UICorner")
 	local SideBar = Instance.new("Frame")
@@ -17,9 +18,15 @@ function WindowTable:CreateWindow()
 	local ImageLabel = Instance.new("ImageLabel")
 
 	--Properties:
+	
+	Tutorial.Name = "Tutorial"
+	Tutorial.Parent = game.Players.LocalPlayer:WaitForChild("CoreGui")
+	Tutorial.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	Tutorial.ResetOnSpawn = false
+
 
 	MainFrame.Name = "MainFrame"
-	MainFrame.Parent = game.StarterGui.Tutorial
+	MainFrame.Parent = Tutorial
 	MainFrame.BackgroundColor3 = Color3.fromRGB(235, 141, 220)
 	MainFrame.Position = UDim2.new(0.382359296, 0, 0.310527742, 0)
 	MainFrame.Size = UDim2.new(0, 430, 0, 260)
