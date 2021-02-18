@@ -105,7 +105,7 @@ function WindowTable:CreateWindow()
 		tabButton.BackgroundColor3 = Color3.fromRGB(255, 202, 232)
 		tabButton.Size = UDim2.new(0, 99, 0, 25)
 		tabButton.Font = Enum.Font.Gotham
-		tabButton.Text = "Example"
+		tabButton.Text = tabname
 		tabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 		tabButton.TextSize = 14.000
 		tabButton.MouseButton1Click:Connect(function()
