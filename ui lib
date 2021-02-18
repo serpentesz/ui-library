@@ -2,10 +2,6 @@ local WindowTable = {}
 
 function WindowTable:CreateWindow()
 	
-	if game.CoreGui:FindFirstChild("Tutorial") then
-		game.CoreGui:FindFirstChild("Tutorial"):Destroy()
-	end
-
 	-- Instances:
 
 	local Tutorial = Instance.new("ScreenGui")
