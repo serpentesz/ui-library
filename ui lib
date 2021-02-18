@@ -1,8 +1,10 @@
 local WindowTable = {}
 
 function WindowTable:CreateWindow()
-	-- Gui to Lua
-	-- Version: 3.2
+	
+	if game.CoreGui:FindFirstChild("Tutorial") then
+		game.CoreGui:FindFirstChild("Tutorial"):Destroy()
+	end
 
 	-- Instances:
 
@@ -17,12 +19,15 @@ function WindowTable:CreateWindow()
 	local allPages = Instance.new("Frame")
 	local mainCorner_2 = Instance.new("UICorner")
 	local pagesFolder = Instance.new("Folder")
-	local ImageLabel = Instance.new("ImageLabel")
+	local elementsPadding = Instance.new("UIPadding")
+	local TextButton = Instance.new("TextButton")
+	local buttonCorner = Instance.new("UICorner")
+
 
 	--Properties:
 	
 	Tutorial.Name = "Tutorial"
-	Tutorial.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	Tutorial.Parent = game.CoreGui
 	Tutorial.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	Tutorial.ResetOnSpawn = false
 
@@ -31,6 +36,7 @@ function WindowTable:CreateWindow()
 	MainFrame.BackgroundColor3 = Color3.fromRGB(235, 141, 220)
 	MainFrame.Position = UDim2.new(0.382359296, 0, 0.310527742, 0)
 	MainFrame.Size = UDim2.new(0, 430, 0, 260)
+	
 
 	mainCorner.CornerRadius = UDim.new(0, 3)
 	mainCorner.Name = "mainCorner"
@@ -70,6 +76,7 @@ function WindowTable:CreateWindow()
 	allPages.BackgroundColor3 = Color3.fromRGB(255, 170, 255)
 	allPages.Position = UDim2.new(0.274418592, 0, 0.0269230772, 0)
 	allPages.Size = UDim2.new(0, 306, 0, 245)
+	MainFrame.Visible = false
 
 	mainCorner_2.CornerRadius = UDim.new(0, 3)
 	mainCorner_2.Name = "mainCorner"
@@ -77,15 +84,6 @@ function WindowTable:CreateWindow()
 
 	pagesFolder.Name = "pagesFolder"
 	pagesFolder.Parent = allPages
-
-	ImageLabel.Parent = allPages
-	ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ImageLabel.BackgroundTransparency = 1.000
-	ImageLabel.Position = UDim2.new(-0.00242075324, 0, -0.000457137823, 0)
-	ImageLabel.Size = UDim2.new(0, 259, 0, 244)
-	ImageLabel.ZIndex = 2
-	ImageLabel.Image = "rbxassetid://4528820693"
-	ImageLabel.ImageTransparency = 0.500
 
 	local pagesFolder = Instance.new("Folder")
 
@@ -100,6 +98,14 @@ function WindowTable:CreateWindow()
 		local tabCorner = Instance.new("UICorner")
 		local newPage = Instance.new("ScrollingFrame")
 		local elementsListing = Instance.new("UIListLayout")
+		
+		local elementsPadding = Instance.new("UIPadding")
+		
+		elementsPadding.Name = "elementsPadding"
+		elementsPadding.Parent = newPage
+		elementsPadding.PaddingRight = UDim.new(0, 5)
+		elementsPadding.PaddingTop = UDim.new(0, 5)
+
 
 		tabButton.Name = "tabButton"
 		tabButton.Parent = allTabs
@@ -148,13 +154,60 @@ function WindowTable:CreateWindow()
 		elementsListing.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		elementsListing.SortOrder = Enum.SortOrder.LayoutOrder
 		elementsListing.Padding = UDim.new(0, 5)
+		
+		local ElementHandler = {}
+		
+		function ElementHandler:CreateButton(btnText, callback)
+			btnText = btnText or "Text Button"
+			callback = callback or function() end
+			
+			local TextButton = Instance.new("TextButton")
+			local buttonCorner = Instance.new("UICorner")
+			
+			TextButton.Parent = newPage
+			TextButton.BackgroundColor3 = Color3.fromRGB(230, 154, 232)
+			TextButton.Position = UDim2.new(0.0147058824, 0, 0.105306074, 0)
+			TextButton.Size = UDim2.new(0, 292, 0, 29)
+			TextButton.Font = Enum.Font.GothamBold
+			TextButton.Text = "Test Button"
+			TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			TextButton.TextSize = 14.000
+			TextButton.MouseButton1Click:connect(function()
+				callback()
+			end)
 
+			buttonCorner.CornerRadius = UDim.new(0, 3)
+			buttonCorner.Name = "buttonCorner"
+			buttonCorner.Parent = TextButton 
+		end
+		
+		return ElementHandler
+	end
+	
+	local SecretAstolfo = {}
+
+	function SecretAstolfo:CreateAstolfo()
+		local ImageLabel = Instance.new("ImageLabel")
+
+		ImageLabel.Parent = allPages
+		ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ImageLabel.BackgroundTransparency = 1.000
+		ImageLabel.Position = UDim2.new(-0.00242075324, 0, -0.000457137823, 0)
+		ImageLabel.Size = UDim2.new(0, 259, 0, 244)
+		ImageLabel.ZIndex = 2
+		ImageLabel.Image = "rbxassetid://4528820693"
+		ImageLabel.ImageTransparency = 0.500
+
+		return SecretAstolfo
 
 	end
 
 	return TabHandler
-
+	
 end
 
 
+
+
 return WindowTable
+
