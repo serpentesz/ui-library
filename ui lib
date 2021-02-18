@@ -151,6 +151,7 @@ function WindowTable:CreateWindow()
 
 			local TextButton = Instance.new("TextButton")
 			local buttonCorner = Instance.new("UICorner")
+			local elementsPadding = Instance.new("UIPadding")
 
 			TextButton.Parent = newPage
 			TextButton.BackgroundColor3 = Color3.fromRGB(230, 138, 255)
@@ -168,6 +169,12 @@ function WindowTable:CreateWindow()
 			buttonCorner.CornerRadius = UDim.new(0, 3)
 			buttonCorner.Name = "buttonCorner"
 			buttonCorner.Parent = TextButton
+			
+			elementsPadding.Name = "elementsPadding"
+			elementsPadding.Parent = newPage
+			elementsPadding.PaddingRight = UDim.new(0, 5)
+			elementsPadding.PaddingTop = UDim.new(0, 5)
+			
 		end
 		
 		return ElementHandler
