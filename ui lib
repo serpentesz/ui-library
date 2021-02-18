@@ -16,7 +16,7 @@ function WindowTable:CreateWindow()
 	local mainCorner_2 = Instance.new("UICorner")
 	local pagesFolder = Instance.new("Folder")
 	local ImageLabel = Instance.new("ImageLabel")
-
+	
 	--Properties:
 
 	Tutorial.Name = "Tutorial"
@@ -87,6 +87,7 @@ function WindowTable:CreateWindow()
 	ImageLabel.ZIndex = 2
 	ImageLabel.Image = "rbxassetid://4528820693"
 	ImageLabel.ImageTransparency = 0.700
+	
 
 	local TabHandler = {}
 
@@ -97,6 +98,7 @@ function WindowTable:CreateWindow()
 		local tabCorner = Instance.new("UICorner")
 		local newPage = Instance.new("ScrollingFrame") 
 		local elementsListing = Instance.new("UIListLayout") 
+		local elementsPadding = Instance.new("UIPadding")
 
 		tabButton.Name = "tabButton"
 		tabButton.Parent = allTabs
@@ -142,6 +144,12 @@ function WindowTable:CreateWindow()
 		elementsListing.HorizontalAlignment = Enum.HorizontalAlignment.Center
 		elementsListing.SortOrder = Enum.SortOrder.LayoutOrder
 		elementsListing.Padding = UDim.new(0, 5)
+		
+		elementsPadding.Name = "elementsPadding"
+		elementsPadding.Parent = newPage
+		elementsPadding.PaddingRight = UDim.new(0, 5)
+		elementsPadding.PaddingTop = UDim.new(0, 5)
+
 
 		local ElementHandler = {}
 
@@ -151,7 +159,6 @@ function WindowTable:CreateWindow()
 
 			local TextButton = Instance.new("TextButton")
 			local buttonCorner = Instance.new("UICorner")
-			local elementsPadding = Instance.new("UIPadding")
 
 			TextButton.Parent = newPage
 			TextButton.BackgroundColor3 = Color3.fromRGB(230, 138, 255)
@@ -170,10 +177,6 @@ function WindowTable:CreateWindow()
 			buttonCorner.Name = "buttonCorner"
 			buttonCorner.Parent = TextButton
 			
-			elementsPadding.Name = "elementsPadding"
-			elementsPadding.Parent = newPage
-			elementsPadding.PaddingRight = UDim.new(0, 5)
-			elementsPadding.PaddingTop = UDim.new(0, 5)
 			
 		end
 		
