@@ -15,7 +15,6 @@ function WindowTable:CreateWindow()
 	local allPages = Instance.new("Frame")
 	local mainCorner_2 = Instance.new("UICorner")
 	local pagesFolder = Instance.new("Folder")
-	local elementsPadding = Instance.new("UIPadding")
 	local TextButton = Instance.new("TextButton")
 	local buttonCorner = Instance.new("UICorner")
 
